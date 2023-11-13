@@ -1,11 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Verifica se o usuário está autenticado antes de executar a lógica da página
-    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-    if (!isLoggedIn) {
-        // Se não estiver autenticado, redireciona de volta para o index.html
+    // Verifica se o usuário está autenticado
+    const autenticado = localStorage.getItem('autenticado');
+
+    if (autenticado !== 'true') {
+        // Se não estiver autenticado, redireciona para o index.html
         window.location.href = 'index.html';
     }
+
+    
 });
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const queryString = window.location.search;
@@ -29,14 +33,14 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function exibirDetalhes(detalhes) {
-    // Atualizei a forma de exibir a imagem, verificando se a propriedade imagem existe e não está vazia
+    
     const imagemElement = document.getElementById('detalhes-imagem');
     if (detalhes && 'imagem' in detalhes && detalhes.imagem.trim() !== '') {
         imagemElement.src = detalhes.imagem;
         imagemElement.alt = 'Imagem do Atleta';
     } else {
         console.error('URL da imagem não fornecida ou está vazia nos detalhes');
-        // Aqui você pode definir uma imagem padrão ou ocultar completamente o elemento da imagem
+        
         imagemElement.style.display = 'none';
     }
 

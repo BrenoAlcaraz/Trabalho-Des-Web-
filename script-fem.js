@@ -1,13 +1,16 @@
 const url = "https://botafogo-atletas.mange.li/feminino";
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Verifica se o usuário está autenticado antes de executar a lógica da página
-    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
-    if (!isLoggedIn) {
-        // Se não estiver autenticado, redireciona de volta para o index.html
+    
+    const autenticado = localStorage.getItem('autenticado');
+
+    if (autenticado !== 'true') {
+        
         window.location.href = 'index.html';
     }
-}); 
+
+    
+});
 
 
 const redirecionarParaDetalhes = (atleta) => {
