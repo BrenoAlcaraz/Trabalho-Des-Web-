@@ -49,8 +49,9 @@ const preenche = (atleta) => {
     container.appendChild(descricao);
 
     container.onclick = handleClick;
-
-    document.body.appendChild(container);
+    
+    divExterna.appendChild(container);
+    document.body.appendChild(divExterna);
 };
 
 const handleClick = (e) => {

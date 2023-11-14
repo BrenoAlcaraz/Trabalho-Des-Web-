@@ -1,6 +1,5 @@
 /* estilização jogadores,jogadores-masc,jogaores-fem*/
 body {
-  display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -37,3 +36,41 @@ article button {
   cursor: pointer;
   z-index: 1; 
 }
+
+
+#child {
+
+  margin:auto;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px 20px; 
+  align-items: center;
+  display: flex;
+  text-align: center;
+}
+
+#divExterna{
+  display: grid;
+   grid-template-columns: auto;
+}
+
+@media screen and (min-width: 768px) {
+  #divExterna {
+    
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (min-width: 1024px)  {
+  #divExterna  {
+    
+    grid-template-columns: auto auto auto auto;
+  }
+}
+
+
+
+
