@@ -1,16 +1,17 @@
 /*estilização detalhes*/
 body {
-    background-color: #6a6a6a;
+    background-color: #000000;
     margin: 0;
     padding: 20px;
     font-family: Arial, sans-serif;
 }
 
 h1 {
-    border: thick double #000000;
+    border: thick double #ffffff;
     padding: 10px;
     text-align: center;
-    font-size: 24px; 
+    font-size: 24px;
+    color: #fff;
 }
 
 button {
@@ -24,10 +25,10 @@ button {
 }
 
 img {
-    max-width: 100%; 
+    max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
 p {
@@ -37,25 +38,30 @@ p {
     text-align: center;
 }
 
+
 @media (max-width: 768px) {
-    body {
+    article {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
         align-items: center;
-        height: 100vh;
+        gap: 1em;
+        flex-direction: column;
     }
-
-    h1 {
-        font-size: 20px;
-    }
-
-    p {
-        width: auto;
-        font-size: 14px;
-    }
-    button {
-        padding: 10px;
-        font-size: 14px;
+    a {
+        text-decoration: none; 
+        color: white; 
+        font-weight: 600; 
+        font-size: 2em; 
+        display: block; 
+        text-align: center;
     }
 }
+
+@media (min-width: 769px) {
+    article {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        flex-direction: row;
+    }
+}
+

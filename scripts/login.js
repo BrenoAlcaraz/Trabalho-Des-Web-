@@ -5,13 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (loginButton) {
         loginButton.addEventListener('click', function () {
             const senha = senhaInput.value;
-
-            
             const hashedSenha = md5(senha);
 
-            
             if (hashedSenha === '85ee0fe4f155a9af2657d85054ad63ca') {
-                
+                localStorage.setItem('autenticado', 'true');
                 window.location.href = 'index2.html';
             } else {
                 alert('Senha incorreta. Tente novamente.');

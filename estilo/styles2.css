@@ -48,6 +48,19 @@ button:nth-child(2) {
     margin-right: 10px;
 }
 
+select {
+    align-items: center;
+    display: none; 
+    padding: 15px;
+    margin-top: auto;
+    margin-bottom:40px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
 @media (max-width: 768px) {
     #div1,
     div {
@@ -55,8 +68,15 @@ button:nth-child(2) {
         text-align: center;
     }
 
-    button {
+    select {
+        display: block; /* Exibe o select */
         margin-top: 10px;
+    }
+    button {   
+        margin-top: 10px;
+    }
+    #button-botao{
+        display:none;
     }
 }
 

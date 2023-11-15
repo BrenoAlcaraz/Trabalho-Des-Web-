@@ -5,20 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Botafogo Atletas</title>
-    <link rel="stylesheet" href="styles2.css">
+    <link rel="stylesheet" href="estilo/styles2.css">
+
+    <script src="scripts/auto-check.js" defer></script>
+    <script src="scripts/login.js" defer></script>
+    <script src="scripts/logout.js" defer></script>
+
+    <script src="scripts/funcionalidades.js" defer></script>
 </head>
 
 <body>
     
     <div id="div1">
         <h1><strong>Botafogo Atletas 2023.2</strong></h1>
-        <button onclick="window.location.href='index.html'">Sair</button>
+        <button id="sairButton" onclick="sair()">Sair</button>
     </div>
 
     <div>
-        <button onclick="window.location.href='jogadores-masculino.html'">Masculino</button>
-        <button onclick="window.location.href='jogadores-feminino.html'">Feminino</button>
-        <button onclick="window.location.href='jogadores.html'">Escalação Completa</button>
+        <button class="button-botao" data-href="jogadores-masculino.html" onclick="redirecionar(this)">Masculino</button>
+        <button class="button-botao" data-href="jogadores-feminino.html" onclick="redirecionar(this)">Feminino</button>
+        <button class="button-botao" data-href="jogadores.html" onclick="redirecionar(this)">Escalação Completa</button>
     </div>
-    <script src="login.js"></script>
+
+    <div>
+        <select id="selectOpcoes" onchange="redirecionarSelect()">
+            <option selected>Escolha uma opção</option>
+            <option value="jogadores-masculino.html">Masculino</option>
+            <option value="jogadores-feminino.html">Feminino</option>
+            <option value="jogadores.html">Escalação Completa</option>          
+        </select>
+    </div>
 </body>
+</html>

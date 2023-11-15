@@ -1,20 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Verifica se o usuário está autenticado
-    const autenticado = localStorage.getItem('autenticado');
-
-    if (autenticado !== 'true') {
-        // Se não estiver autenticado, redireciona para o index.html
-        window.location.href = 'index.html';
-    }
-
-    
-});
-
-
-document.addEventListener('DOMContentLoaded', function () {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-
+    
     const detalhes = {
         id: urlParams.get('id'),
         altura: urlParams.get('altura'),

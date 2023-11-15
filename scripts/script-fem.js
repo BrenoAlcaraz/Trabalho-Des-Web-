@@ -1,17 +1,13 @@
-const url = "https://botafogo-atletas.mange.li";
+const url = "https://botafogo-atletas.mange.li/feminino";
 
 document.addEventListener('DOMContentLoaded', function () {
-    
     const autenticado = localStorage.getItem('autenticado');
 
     if (autenticado !== 'true') {
-       
+        console.log('Usuário não autenticado. Redirecionando para index.html');
         window.location.href = 'index.html';
     }
-
-    
 });
-
 
 const redirecionarParaDetalhes = (atleta) => {
     const queryString = Object.entries(atleta)
@@ -51,6 +47,7 @@ const preenche = (atleta) => {
     container.onclick = handleClick;
 
     divExterna.appendChild(container);
+
     document.body.appendChild(divExterna);
 };
 
@@ -71,14 +68,28 @@ const acha_cookie = (chave) => {
 };
 
 const pegar_coisas = async (caminho) => {
-    const resposta = await fetch(caminho);
-    const dados = await resposta.json();
-    return dados;
+    try {
+        const resposta = await fetch(caminho);
+
+        if (!resposta.ok) {
+            console.error(`Erro na requisição: ${resposta.status}`);
+            return;
+        }
+
+        const dados = await resposta.json();
+        return dados;
+    } catch (erro) {
+        console.error('Erro na requisição:', erro.message);
+    }
 };
 
-pegar_coisas(`${url}/all`).then((entrada) => {
-    for (atleta of entrada) {
-        preenche(atleta);
+pegar_coisas(`${url}`).then((entrada) => {
+    if (entrada) {
+        for (const atleta of entrada) {
+            preenche(atleta);
+        }
+    } else {
+        console.log('Dados vazios ou erro na requisição.');
     }
 });
 
