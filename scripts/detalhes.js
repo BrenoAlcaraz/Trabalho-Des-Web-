@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Detalhes obtidos com sucesso:', detalhes);
         exibirDetalhes(detalhes);
     } else {
-        console.error('ID não encontrado na URL');
+        console.error('ID não encontrado na URL');   
     }
 });
 

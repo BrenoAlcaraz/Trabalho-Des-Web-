@@ -53,6 +53,12 @@ button:hover {
     background-color: #555;
 }
 
+#imagem-reduzida{
+    margin-top: 8px;
+    width: 100px;
+    height: 100px;
+}
+
 @media (max-width: 768px) {
     body {
         align-items: flex-start;
