@@ -72,7 +72,8 @@ select {
         display: block; /* Exibe o select */
         margin-top: 10px;
     }
-    button {   
+    button {  
+        display: none; 
         margin-top: 10px;
     }
     #button-botao{
